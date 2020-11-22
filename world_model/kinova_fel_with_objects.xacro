@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<robot name="kinova_fel_with_objects" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <mujoco>
+        <compiler balanceinertia="true" meshdir="../meshes/" strippath="true"/>
+    </mujoco>
+<!--    <mujoco>-->
+<!--        <compiler balanceinertia="true" meshdir="$(find kinova_mujoco)/meshes/" strippath="true"/>-->
+<!--    </mujoco>-->
+    <xacro:include filename="$(find kinova_mujoco)/world_model/materials.xacro" />
+
+
+    <link name="world"/>
+
+    <joint name="world_robot_joint" type="fixed">
+     <origin xyz="0 0 0.0" rpy="0 0 0" />
+     <parent link="world"/>
+     <child link="base_link"/>
+    </joint>
+
+<!--    <node pkg="tf2_ros" type="transform_publisher" name="base_broadcaster" args="0.0 0 0 0 0 0 1 /world base_link 50" />-->
+<!--    <node pkg="tf2_ros" type="transform_publisher" name="table_broadcaster" args="0.4 0 0 0 0 0 1 /world table1 50" />-->
+
+    <xacro:include filename="$(find kortex_description)/robots/gen3_robotiq_2f_85_fel.xacro"/>
+
+<!--    add some objects here -->
+<!--    <xacro:include filename="$(find mesh_store)/models/soda_can.urdf"/>-->
+<!--    <xacro:include filename="$(find mesh_store)/models/wine_glass2.urdf"/>-->
+<!--    <xacro:include filename="$(find iiwa_bhand_description)/robots/kettle1.urdf"/>-->
+<!--    <xacro:include filename="$(find kinova_mujoco)/data/scene_0.urdf"/>-->
+    <xacro:include filename="$(find kinova_mujoco)/data_processing/scene_0.urdf"/>
+
+
+</robot>

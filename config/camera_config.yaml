@@ -1,0 +1,8 @@
+kinova_mujoco:
+  look_at_x: 0.5
+  look_at_y: 0.0
+  look_at_z: 0.0
+  look_azimuth: 90.0
+  look_dist: 2.0
+  look_elevation: -30.0
+

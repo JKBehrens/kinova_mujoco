@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="look_at_x" default="0.0"/>
+  <arg name="look_at_y" default="0.0"/>
+  <arg name="look_at_z" default="1.2"/>
+  <arg name="prefix" default="" />
+  <arg name="node_start_delay" default="1.0" />
+
+  <arg name="rviz" default="true"/>
+
+    <!--<node name="xacro2urdf" pkg="kinova_mujoco" type="run_xacro.sh" />
+    <node name="collect_meshes" pkg="kinova_mujoco" type="collect_meshes.py" />
+    -->
+
+    <arg name="robot_description" default="$(find kinova_mujoco)/world_model/kinova_fel_with_objects_NoDae.urdf"/>
+
+    <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find gen3_robotiq_2f_85_move_it_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+  <!--<param name="robot_description" textfile="$(find kinova_mujoco)/world_model/kinova_fel_with_objects_NoDae.urdf"/> -->
+
+
+    <!--<arg name="model" default="$(find kinova_mujoco)/world_model/kinova_fel_with_objects.xacro"/> -->
+    <!--><arg name="model" default="$(find iiwa_bhand_description)/robots/obj_test.urdf"/>-->
+
+    <arg name="mujoco_model" default="$(arg robot_description)"/>
+
+    <!--Compensate bias forces in mujoco; If true the effort visible to ROS will not contains gravity/corollios/etc. forces -->
+    <arg name="compensate_bias" default="false"/>
+    <arg name="bias_error" default="1.0"/>
+
+    <!--<param name="robot_description" textfile="$(arg model)"/>-->
+    <group ns="kinova_mujoco">
+        <rosparam command="load" file="$(find kinova_mujoco)/config/joint_position_controllers.yaml"/>
+        <arg name="controllers" default="joint_state_controller gen3_joint_trajectory_controller trajectory_controller_fingers"/>
+        <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+              args="$(arg controllers)"/>
+        <node pkg="topic_tools" type="relay" name="relay_joint_state" args="joint_states /joint_states"/>
+    </group>
+
+    <node name="kinova_mujoco" type="mujoco_control" pkg="mujoco_ros_control" output="screen">
+        <param name="model" value="$(arg mujoco_model)"/>
+        <remap from="/kinova_mujoco/gen3_joint_trajectory_controller/follow_joint_trajectory"
+               to="/PositionJointInterface_trajectory_controller/follow_joint_trajectory"/>
+
+        <remap from="/kinova_mujoco/gen3_joint_trajectory_controller/follow_joint_trajectory"
+               to="/gen3_joint_trajectory_controller/follow_joint_trajectory"/>
+
+
+        <param name="look_at_x" value="$(arg look_at_x)"/>
+        <param name="look_at_y" value="$(arg look_at_y)"/>
+        <param name="look_at_z" value="$(arg look_at_z)"/>
+        <param name="compensate_bias" value="$(arg compensate_bias)"/>
+        <param name="bias_error" value="$(arg bias_error)"/>
+    </node>
+
+
+    <node name="kinova_gripper_action_forwarding" type="gripper_action_to_trajectory_action" pkg="kinova_mujoco"
+          output="screen">
+    </node>
+
+
+    <!--<node pkg="topic_tools" type="relay" name="relay_gripper_action" args="/kinova_mujoco/gripper_controller/gripper_cmd /robotiq_2f_85_gripper_controller/gripper_cmd"/>
+    -->
+    <!-- Given the published joint states, publish tf for the robot links -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+    <!--Load Move Group Interface -->
+    <!-- Load move_group -->
+    <include file="$(find kortex_description)/../kortex_move_it_config/gen3_robotiq_2f_85_move_it_config/launch/move_group.launch">
+        <arg name="dof" value="7"/>
+        <arg name="prefix" value="$(arg prefix)"/>
+        <arg name="publish_monitored_planning_scene" value="true" />
+        <arg name="fake_execution" value="false"/>
+
+    </include>
+
+
+    <!-- Run Rviz and load the default config to see the state of the move_group node -->
+    <include if="$(arg rviz)" file="$(find kinova_mujoco)/launch/moveit_rviz.launch">
+        <arg name="config" value="true"/>
+        <arg name="debug" value="false"/>
+        <!--<arg name="customconfig" value="-d $(find iiwa_bhand_mujoco)/rviz/rviz_config.rviz"/> -->
+    </include>
+
+    <!-- load initial camera positioning -->
+    <rosparam command="load" file="$(find kinova_mujoco)/config/camera_config.yaml"/>
+
+    <!-- display the scene objects in rviz -->
+    <node name="display_scene_objects" pkg="kinova_mujoco" type="displayObjectMarkers.py" respawn="true" output="screen">
+    </node>
+
+
+</launch>

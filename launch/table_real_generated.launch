@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="look_at_x" default="0.0"/>
+  <arg name="look_at_y" default="0.0"/>
+  <arg name="look_at_z" default="1.2"/>
+  <arg name="prefix" default="" />
+  <arg name="node_start_delay" default="1.0" />
+
+
+
+    <arg name="rviz" default="true"/>
+
+    <!--<node name="xacro2urdf" pkg="kinova_mujoco" type="run_xacro.sh" />
+    <node name="collect_meshes" pkg="kinova_mujoco" type="collect_meshes.py" />
+    -->
+
+
+
+<include file="$(find gen3_robotiq_2f_85_move_it_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+    <!--<node pkg="topic_tools" type="relay" name="relay_gripper_action" args="/kinova_mujoco/gripper_controller/gripper_cmd /robotiq_2f_85_gripper_controller/gripper_cmd"/>
+    -->
+    <!-- Given the published joint states, publish tf for the robot links -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+  <!-- start Kortex driver -->
+  <include file="$(find kortex_driver)/launch/kortex_driver.launch">
+    <!--><arg name="ip_address" value="192.168.210.126"/>-->
+    <arg name="ip_address" value="192.168.1.10"/>
+    <arg name="start_rviz" value="true"/>
+    <arg name="gripper" value="robotiq_2f_85"/>
+    <arg name="dof" value="7"/>
+  </include>
+
+
+
+
+
+
+
+
+
+</launch>
