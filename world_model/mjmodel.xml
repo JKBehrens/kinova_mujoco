@@ -1,0 +1,1519 @@
+<mujoco model="kinova_fel_with_objects">
+    <compiler angle="radian" meshdir="../meshes/" />
+    <!-- <size njmax="500" nconmax="100" /> -->
+    <option solver="CG" tolerance="1e-6"/>
+    <size nconmax="500" njmax="5000" nstack="5000000"/>
+    <asset>
+      <texture name="texsponge" type="2d" file="sponge.png"/>
+      <material name="matsponge" texture="texsponge" specular="0.3"/>
+
+        <mesh name="base_link" file="base_link.STL" />
+        <mesh name="shoulder_link" file="shoulder_link.STL" />
+        <mesh name="half_arm_1_link" file="half_arm_1_link.STL" />
+        <mesh name="half_arm_2_link" file="half_arm_2_link.STL" />
+        <mesh name="forearm_link" file="forearm_link.STL" />
+        <mesh name="spherical_wrist_1_link" file="spherical_wrist_1_link.STL" />
+        <mesh name="spherical_wrist_2_link" file="spherical_wrist_2_link.STL" />
+        <mesh name="bracelet_with_vision_link" file="bracelet_with_vision_link.STL" />
+        <mesh name="robotiq_arg2f_base_link" file="robotiq_arg2f_base_link.stl" />
+        <mesh name="robotiq_arg2f_85_outer_knuckle" file="robotiq_arg2f_85_outer_knuckle.STL" scale="0.001 0.001 0.001" />
+        <mesh name="robotiq_arg2f_85_outer_finger" file="robotiq_arg2f_85_outer_finger.STL" scale="0.001 0.001 0.001" />
+        <mesh name="robotiq_arg2f_85_inner_finger" file="robotiq_arg2f_85_inner_finger.STL" scale="0.001 0.001 0.001" />
+        <mesh name="robotiq_arg2f_85_inner_knuckle" file="robotiq_arg2f_85_inner_knuckle.STL" scale="0.001 0.001 0.001" />
+        <mesh name="bowl_0_000000" file="bowl_0_000000.stl" />
+        <mesh name="bowl_0_000001" file="bowl_0_000001.stl" />
+        <mesh name="bowl_0_000002" file="bowl_0_000002.stl" />
+        <mesh name="bowl_0_000003" file="bowl_0_000003.stl" />
+        <mesh name="bowl_0_000004" file="bowl_0_000004.stl" />
+        <mesh name="bowl_0_000005" file="bowl_0_000005.stl" />
+        <mesh name="bowl_0_000006" file="bowl_0_000006.stl" />
+        <mesh name="bowl_0_000007" file="bowl_0_000007.stl" />
+        <mesh name="bowl_0_000008" file="bowl_0_000008.stl" />
+        <mesh name="bowl_0_000009" file="bowl_0_000009.stl" />
+        <mesh name="bowl_0_000010" file="bowl_0_000010.stl" />
+        <mesh name="bowl_0_000011" file="bowl_0_000011.stl" />
+        <mesh name="bowl_0_000012" file="bowl_0_000012.stl" />
+        <mesh name="bowl_0_000013" file="bowl_0_000013.stl" />
+        <mesh name="bowl_0_000014" file="bowl_0_000014.stl" />
+        <mesh name="bowl_0_000015" file="bowl_0_000015.stl" />
+        <mesh name="bowl_0_000016" file="bowl_0_000016.stl" />
+        <mesh name="bowl_0_000017" file="bowl_0_000017.stl" />
+        <mesh name="bowl_0_000018" file="bowl_0_000018.stl" />
+        <mesh name="fork_1_000000" file="fork_1_000000.stl" />
+        <mesh name="fork_1_000001" file="fork_1_000001.stl" />
+        <mesh name="fork_1_000002" file="fork_1_000002.stl" />
+        <mesh name="fork_1_000003" file="fork_1_000003.stl" />
+        <mesh name="fork_1_000004" file="fork_1_000004.stl" />
+        <mesh name="fork_1_000005" file="fork_1_000005.stl" />
+        <mesh name="fork_1_000006" file="fork_1_000006.stl" />
+        <mesh name="fork_1_000007" file="fork_1_000007.stl" />
+        <mesh name="fork_1_000008" file="fork_1_000008.stl" />
+        <mesh name="fork_1_000009" file="fork_1_000009.stl" />
+        <mesh name="fork_1_000010" file="fork_1_000010.stl" />
+        <mesh name="fork_1_000011" file="fork_1_000011.stl" />
+        <mesh name="fork_1_000012" file="fork_1_000012.stl" />
+        <mesh name="fork_1_000013" file="fork_1_000013.stl" />
+        <mesh name="fork_1_000014" file="fork_1_000014.stl" />
+        <mesh name="fork_1_000015" file="fork_1_000015.stl" />
+        <mesh name="fork_1_000016" file="fork_1_000016.stl" />
+        <mesh name="fork_1_000017" file="fork_1_000017.stl" />
+        <mesh name="fork_1_000018" file="fork_1_000018.stl" />
+        <mesh name="fork_1_000019" file="fork_1_000019.stl" />
+        <mesh name="fork_1_000020" file="fork_1_000020.stl" />
+        <mesh name="fork_1_000021" file="fork_1_000021.stl" />
+        <mesh name="fork_1_000022" file="fork_1_000022.stl" />
+        <mesh name="fork_1_000023" file="fork_1_000023.stl" />
+        <mesh name="fork_1_000024" file="fork_1_000024.stl" />
+        <mesh name="fork_1_000025" file="fork_1_000025.stl" />
+        <mesh name="glass_2_000000" file="glass_2_000000.stl" />
+        <mesh name="glass_2_000001" file="glass_2_000001.stl" />
+        <mesh name="glass_2_000002" file="glass_2_000002.stl" />
+        <mesh name="glass_2_000003" file="glass_2_000003.stl" />
+        <mesh name="glass_2_000004" file="glass_2_000004.stl" />
+        <mesh name="glass_2_000005" file="glass_2_000005.stl" />
+        <mesh name="glass_2_000006" file="glass_2_000006.stl" />
+        <mesh name="glass_2_000007" file="glass_2_000007.stl" />
+        <mesh name="glass_2_000008" file="glass_2_000008.stl" />
+        <mesh name="glass_2_000009" file="glass_2_000009.stl" />
+        <mesh name="glass_2_000010" file="glass_2_000010.stl" />
+        <mesh name="glass_2_000011" file="glass_2_000011.stl" />
+        <mesh name="glass_2_000012" file="glass_2_000012.stl" />
+        <mesh name="glass_2_000013" file="glass_2_000013.stl" />
+        <mesh name="glass_2_000014" file="glass_2_000014.stl" />
+        <mesh name="glass_2_000015" file="glass_2_000015.stl" />
+        <mesh name="glass_2_000016" file="glass_2_000016.stl" />
+        <mesh name="glass_2_000017" file="glass_2_000017.stl" />
+        <mesh name="glass_2_000018" file="glass_2_000018.stl" />
+        <mesh name="glass_2_000019" file="glass_2_000019.stl" />
+        <mesh name="glass_2_000020" file="glass_2_000020.stl" />
+        <mesh name="glass_2_000021" file="glass_2_000021.stl" />
+        <mesh name="glass_2_000022" file="glass_2_000022.stl" />
+        <mesh name="glass_2_000023" file="glass_2_000023.stl" />
+        <mesh name="glass_2_000024" file="glass_2_000024.stl" />
+        <mesh name="glass_2_000025" file="glass_2_000025.stl" />
+        <mesh name="glass_2_000026" file="glass_2_000026.stl" />
+        <mesh name="glass_2_000027" file="glass_2_000027.stl" />
+        <mesh name="glass_2_000028" file="glass_2_000028.stl" />
+        <mesh name="glass_2_000029" file="glass_2_000029.stl" />
+        <mesh name="knife_3_000000" file="knife_3_000000.stl" />
+        <mesh name="knife_3_000001" file="knife_3_000001.stl" />
+        <mesh name="mug_4_000000" file="mug_4_000000.stl" />
+        <mesh name="mug_4_000001" file="mug_4_000001.stl" />
+        <mesh name="mug_4_000002" file="mug_4_000002.stl" />
+        <mesh name="mug_4_000003" file="mug_4_000003.stl" />
+        <mesh name="mug_4_000004" file="mug_4_000004.stl" />
+        <mesh name="mug_4_000005" file="mug_4_000005.stl" />
+        <mesh name="mug_4_000006" file="mug_4_000006.stl" />
+        <mesh name="mug_4_000007" file="mug_4_000007.stl" />
+        <mesh name="mug_4_000008" file="mug_4_000008.stl" />
+        <mesh name="mug_4_000009" file="mug_4_000009.stl" />
+        <mesh name="mug_4_000010" file="mug_4_000010.stl" />
+        <mesh name="mug_4_000011" file="mug_4_000011.stl" />
+        <mesh name="mug_4_000012" file="mug_4_000012.stl" />
+        <mesh name="mug_4_000013" file="mug_4_000013.stl" />
+        <mesh name="mug_4_000014" file="mug_4_000014.stl" />
+        <mesh name="mug_4_000015" file="mug_4_000015.stl" />
+        <mesh name="mug_4_000016" file="mug_4_000016.stl" />
+        <mesh name="mug_4_000017" file="mug_4_000017.stl" />
+        <mesh name="mug_4_000018" file="mug_4_000018.stl" />
+        <mesh name="mug_4_000019" file="mug_4_000019.stl" />
+        <mesh name="mug_4_000020" file="mug_4_000020.stl" />
+        <mesh name="mug_4_000021" file="mug_4_000021.stl" />
+        <mesh name="mug_4_000022" file="mug_4_000022.stl" />
+        <mesh name="mug_4_000023" file="mug_4_000023.stl" />
+        <mesh name="mug_4_000024" file="mug_4_000024.stl" />
+        <mesh name="mug_4_000025" file="mug_4_000025.stl" />
+        <mesh name="mug_4_000026" file="mug_4_000026.stl" />
+        <mesh name="mug_4_000027" file="mug_4_000027.stl" />
+        <mesh name="mug_4_000028" file="mug_4_000028.stl" />
+        <mesh name="mug_4_000029" file="mug_4_000029.stl" />
+        <mesh name="mug_4_000030" file="mug_4_000030.stl" />
+        <mesh name="mug_4_000031" file="mug_4_000031.stl" />
+        <mesh name="mug_4_000032" file="mug_4_000032.stl" />
+        <mesh name="mug_4_000033" file="mug_4_000033.stl" />
+        <mesh name="mug_4_000034" file="mug_4_000034.stl" />
+        <mesh name="mug_4_000035" file="mug_4_000035.stl" />
+        <mesh name="mug_4_000036" file="mug_4_000036.stl" />
+        <mesh name="mug_4_000037" file="mug_4_000037.stl" />
+        <mesh name="mug_4_000038" file="mug_4_000038.stl" />
+        <mesh name="mug_4_000039" file="mug_4_000039.stl" />
+        <mesh name="mug_4_000040" file="mug_4_000040.stl" />
+        <mesh name="mug_4_000041" file="mug_4_000041.stl" />
+        <mesh name="mug_4_000042" file="mug_4_000042.stl" />
+        <mesh name="mug_4_000043" file="mug_4_000043.stl" />
+        <mesh name="mug_4_000044" file="mug_4_000044.stl" />
+        <mesh name="mug_4_000045" file="mug_4_000045.stl" />
+        <mesh name="mug_4_000046" file="mug_4_000046.stl" />
+        <mesh name="pan_5_000000" file="pan_5_000000.stl" />
+        <mesh name="pan_5_000001" file="pan_5_000001.stl" />
+        <mesh name="pan_5_000002" file="pan_5_000002.stl" />
+        <mesh name="pan_5_000003" file="pan_5_000003.stl" />
+        <mesh name="pan_5_000004" file="pan_5_000004.stl" />
+        <mesh name="pan_5_000005" file="pan_5_000005.stl" />
+        <mesh name="pan_5_000006" file="pan_5_000006.stl" />
+        <mesh name="pan_5_000007" file="pan_5_000007.stl" />
+        <mesh name="pan_5_000008" file="pan_5_000008.stl" />
+        <mesh name="pan_5_000009" file="pan_5_000009.stl" />
+        <mesh name="pan_5_000010" file="pan_5_000010.stl" />
+        <mesh name="pan_5_000011" file="pan_5_000011.stl" />
+        <mesh name="pan_5_000012" file="pan_5_000012.stl" />
+        <mesh name="pan_5_000013" file="pan_5_000013.stl" />
+        <mesh name="pan_5_000014" file="pan_5_000014.stl" />
+        <mesh name="pan_5_000015" file="pan_5_000015.stl" />
+        <mesh name="pan_5_000016" file="pan_5_000016.stl" />
+        <mesh name="pan_5_000017" file="pan_5_000017.stl" />
+        <mesh name="pan_5_000018" file="pan_5_000018.stl" />
+        <mesh name="pan_5_000019" file="pan_5_000019.stl" />
+        <mesh name="pan_5_000020" file="pan_5_000020.stl" />
+        <mesh name="pan_5_000021" file="pan_5_000021.stl" />
+        <mesh name="pan_5_000022" file="pan_5_000022.stl" />
+        <mesh name="pan_5_000023" file="pan_5_000023.stl" />
+        <mesh name="pan_5_000024" file="pan_5_000024.stl" />
+        <mesh name="pan_5_000025" file="pan_5_000025.stl" />
+        <mesh name="pan_5_000026" file="pan_5_000026.stl" />
+        <mesh name="pan_5_000027" file="pan_5_000027.stl" />
+        <mesh name="pan_5_000028" file="pan_5_000028.stl" />
+        <mesh name="pan_5_000029" file="pan_5_000029.stl" />
+        <mesh name="pan_5_000030" file="pan_5_000030.stl" />
+        <mesh name="pan_5_000031" file="pan_5_000031.stl" />
+        <mesh name="pan_5_000032" file="pan_5_000032.stl" />
+        <mesh name="pan_5_000033" file="pan_5_000033.stl" />
+        <mesh name="pan_5_000034" file="pan_5_000034.stl" />
+        <mesh name="pan_5_000035" file="pan_5_000035.stl" />
+        <mesh name="pan_5_000036" file="pan_5_000036.stl" />
+        <mesh name="pan_5_000037" file="pan_5_000037.stl" />
+        <mesh name="pan_5_000038" file="pan_5_000038.stl" />
+        <mesh name="pan_5_000039" file="pan_5_000039.stl" />
+        <mesh name="pan_5_000040" file="pan_5_000040.stl" />
+        <mesh name="pan_5_000041" file="pan_5_000041.stl" />
+        <mesh name="pan_5_000042" file="pan_5_000042.stl" />
+        <mesh name="pan_5_000043" file="pan_5_000043.stl" />
+        <mesh name="pan_5_000044" file="pan_5_000044.stl" />
+        <mesh name="pan_5_000045" file="pan_5_000045.stl" />
+        <mesh name="pan_5_000046" file="pan_5_000046.stl" />
+        <mesh name="pan_5_000047" file="pan_5_000047.stl" />
+        <mesh name="pan_5_000048" file="pan_5_000048.stl" />
+        <mesh name="pan_5_000049" file="pan_5_000049.stl" />
+        <mesh name="pan_5_000050" file="pan_5_000050.stl" />
+        <mesh name="pan_5_000051" file="pan_5_000051.stl" />
+        <mesh name="pan_5_000052" file="pan_5_000052.stl" />
+        <mesh name="pan_5_000053" file="pan_5_000053.stl" />
+        <mesh name="pan_5_000054" file="pan_5_000054.stl" />
+        <mesh name="pan_5_000055" file="pan_5_000055.stl" />
+        <mesh name="pan_5_000056" file="pan_5_000056.stl" />
+        <mesh name="pan_5_000057" file="pan_5_000057.stl" />
+        <mesh name="pan_5_000058" file="pan_5_000058.stl" />
+        <mesh name="pan_5_000059" file="pan_5_000059.stl" />
+        <mesh name="pan_5_000060" file="pan_5_000060.stl" />
+        <mesh name="pan_5_000061" file="pan_5_000061.stl" />
+        <mesh name="pan_5_000062" file="pan_5_000062.stl" />
+        <mesh name="pan_5_000063" file="pan_5_000063.stl" />
+        <mesh name="pan_5_000064" file="pan_5_000064.stl" />
+        <mesh name="pan_5_000065" file="pan_5_000065.stl" />
+        <mesh name="pan_5_000066" file="pan_5_000066.stl" />
+        <mesh name="pan_5_000067" file="pan_5_000067.stl" />
+        <mesh name="pan_5_000068" file="pan_5_000068.stl" />
+        <mesh name="pan_5_000069" file="pan_5_000069.stl" />
+        <mesh name="pan_5_000070" file="pan_5_000070.stl" />
+        <mesh name="pan_5_000071" file="pan_5_000071.stl" />
+        <mesh name="pan_5_000072" file="pan_5_000072.stl" />
+        <mesh name="pan_5_000073" file="pan_5_000073.stl" />
+        <mesh name="pan_5_000074" file="pan_5_000074.stl" />
+        <mesh name="pan_5_000075" file="pan_5_000075.stl" />
+        <mesh name="pan_5_000076" file="pan_5_000076.stl" />
+        <mesh name="pan_5_000077" file="pan_5_000077.stl" />
+        <mesh name="pan_5_000078" file="pan_5_000078.stl" />
+        <mesh name="pan_5_000079" file="pan_5_000079.stl" />
+        <mesh name="pan_5_000080" file="pan_5_000080.stl" />
+        <mesh name="pan_5_000081" file="pan_5_000081.stl" />
+        <mesh name="pan_5_000082" file="pan_5_000082.stl" />
+        <mesh name="pan_5_000083" file="pan_5_000083.stl" />
+        <mesh name="pan_5_000084" file="pan_5_000084.stl" />
+        <mesh name="pan_5_000085" file="pan_5_000085.stl" />
+        <mesh name="pan_5_000086" file="pan_5_000086.stl" />
+        <mesh name="plate_6_000000" file="plate_6_000000.stl" />
+        <mesh name="plate_6_000001" file="plate_6_000001.stl" />
+        <mesh name="plate_6_000002" file="plate_6_000002.stl" />
+        <mesh name="plate_6_000003" file="plate_6_000003.stl" />
+        <mesh name="plate_6_000004" file="plate_6_000004.stl" />
+        <mesh name="plate_6_000005" file="plate_6_000005.stl" />
+        <mesh name="plate_6_000006" file="plate_6_000006.stl" />
+        <mesh name="plate_6_000007" file="plate_6_000007.stl" />
+        <mesh name="plate_6_000008" file="plate_6_000008.stl" />
+        <mesh name="plate_6_000009" file="plate_6_000009.stl" />
+        <mesh name="plate_6_000010" file="plate_6_000010.stl" />
+        <mesh name="plate_6_000011" file="plate_6_000011.stl" />
+        <mesh name="plate_6_000012" file="plate_6_000012.stl" />
+        <mesh name="plate_6_000013" file="plate_6_000013.stl" />
+        <mesh name="plate_6_000014" file="plate_6_000014.stl" />
+        <mesh name="plate_6_000015" file="plate_6_000015.stl" />
+        <mesh name="plate_6_000016" file="plate_6_000016.stl" />
+        <mesh name="plate_6_000017" file="plate_6_000017.stl" />
+        <mesh name="plate_6_000018" file="plate_6_000018.stl" />
+        <mesh name="plate_6_000019" file="plate_6_000019.stl" />
+        <mesh name="plate_6_000020" file="plate_6_000020.stl" />
+        <mesh name="plate_6_000021" file="plate_6_000021.stl" />
+        <mesh name="plate_6_000022" file="plate_6_000022.stl" />
+        <mesh name="plate_6_000023" file="plate_6_000023.stl" />
+        <mesh name="plate_6_000024" file="plate_6_000024.stl" />
+        <mesh name="plate_6_000025" file="plate_6_000025.stl" />
+        <mesh name="plate_6_000026" file="plate_6_000026.stl" />
+        <mesh name="plate_6_000027" file="plate_6_000027.stl" />
+        <mesh name="plate_6_000028" file="plate_6_000028.stl" />
+        <mesh name="plate_6_000029" file="plate_6_000029.stl" />
+        <mesh name="plate_6_000030" file="plate_6_000030.stl" />
+        <mesh name="plate_6_000031" file="plate_6_000031.stl" />
+        <mesh name="plate_6_000032" file="plate_6_000032.stl" />
+        <mesh name="plate_6_000033" file="plate_6_000033.stl" />
+        <mesh name="plate_6_000034" file="plate_6_000034.stl" />
+        <mesh name="plate_6_000035" file="plate_6_000035.stl" />
+        <mesh name="plate_6_000036" file="plate_6_000036.stl" />
+        <mesh name="plate_6_000037" file="plate_6_000037.stl" />
+        <mesh name="plate_6_000038" file="plate_6_000038.stl" />
+        <mesh name="plate_6_000039" file="plate_6_000039.stl" />
+        <mesh name="plate_6_000040" file="plate_6_000040.stl" />
+        <mesh name="plate_6_000041" file="plate_6_000041.stl" />
+        <mesh name="plate_6_000042" file="plate_6_000042.stl" />
+        <mesh name="plate_6_000043" file="plate_6_000043.stl" />
+        <mesh name="plate_6_000044" file="plate_6_000044.stl" />
+        <mesh name="plate_6_000045" file="plate_6_000045.stl" />
+        <mesh name="plate_6_000046" file="plate_6_000046.stl" />
+        <mesh name="plate_6_000047" file="plate_6_000047.stl" />
+        <mesh name="plate_6_000048" file="plate_6_000048.stl" />
+        <mesh name="plate_6_000049" file="plate_6_000049.stl" />
+        <mesh name="plate_6_000050" file="plate_6_000050.stl" />
+        <mesh name="plate_6_000051" file="plate_6_000051.stl" />
+        <mesh name="plate_6_000052" file="plate_6_000052.stl" />
+        <mesh name="plate_6_000053" file="plate_6_000053.stl" />
+        <mesh name="plate_6_000054" file="plate_6_000054.stl" />
+        <mesh name="plate_6_000055" file="plate_6_000055.stl" />
+        <mesh name="plate_6_000056" file="plate_6_000056.stl" />
+        <mesh name="plate_6_000057" file="plate_6_000057.stl" />
+        <mesh name="plate_6_000058" file="plate_6_000058.stl" />
+        <mesh name="plate_6_000059" file="plate_6_000059.stl" />
+        <mesh name="plate_6_000060" file="plate_6_000060.stl" />
+        <mesh name="plate_6_000061" file="plate_6_000061.stl" />
+        <mesh name="plate_6_000062" file="plate_6_000062.stl" />
+        <mesh name="plate_6_000063" file="plate_6_000063.stl" />
+        <mesh name="plate_6_000064" file="plate_6_000064.stl" />
+        <mesh name="plate_6_000065" file="plate_6_000065.stl" />
+        <mesh name="plate_6_000066" file="plate_6_000066.stl" />
+        <mesh name="plate_6_000067" file="plate_6_000067.stl" />
+        <mesh name="plate_6_000068" file="plate_6_000068.stl" />
+        <mesh name="plate_6_000069" file="plate_6_000069.stl" />
+        <mesh name="plate_6_000070" file="plate_6_000070.stl" />
+        <mesh name="plate_6_000071" file="plate_6_000071.stl" />
+        <mesh name="plate_6_000072" file="plate_6_000072.stl" />
+        <mesh name="plate_6_000073" file="plate_6_000073.stl" />
+        <mesh name="plate_6_000074" file="plate_6_000074.stl" />
+        <mesh name="plate_6_000075" file="plate_6_000075.stl" />
+        <mesh name="plate_6_000076" file="plate_6_000076.stl" />
+        <mesh name="plate_6_000077" file="plate_6_000077.stl" />
+        <mesh name="plate_6_000078" file="plate_6_000078.stl" />
+        <mesh name="plate_6_000079" file="plate_6_000079.stl" />
+        <mesh name="plate_6_000080" file="plate_6_000080.stl" />
+        <mesh name="plate_6_000081" file="plate_6_000081.stl" />
+        <mesh name="plate_6_000082" file="plate_6_000082.stl" />
+        <mesh name="plate_6_000083" file="plate_6_000083.stl" />
+        <mesh name="plate_6_000084" file="plate_6_000084.stl" />
+        <mesh name="plate_6_000085" file="plate_6_000085.stl" />
+        <mesh name="plate_6_000086" file="plate_6_000086.stl" />
+        <mesh name="plate_6_000087" file="plate_6_000087.stl" />
+        <mesh name="plate_6_000088" file="plate_6_000088.stl" />
+        <mesh name="plate_6_000089" file="plate_6_000089.stl" />
+        <mesh name="plate_6_000090" file="plate_6_000090.stl" />
+        <mesh name="plate_6_000091" file="plate_6_000091.stl" />
+        <mesh name="plate_6_000092" file="plate_6_000092.stl" />
+        <mesh name="plate_6_000093" file="plate_6_000093.stl" />
+        <mesh name="plate_6_000094" file="plate_6_000094.stl" />
+        <mesh name="plate_6_000095" file="plate_6_000095.stl" />
+        <mesh name="plate_6_000096" file="plate_6_000096.stl" />
+        <mesh name="plate_6_000097" file="plate_6_000097.stl" />
+        <mesh name="plate_6_000098" file="plate_6_000098.stl" />
+        <mesh name="plate_6_000099" file="plate_6_000099.stl" />
+        <mesh name="plate_6_000100" file="plate_6_000100.stl" />
+        <mesh name="plate_6_000101" file="plate_6_000101.stl" />
+        <mesh name="plate_6_000102" file="plate_6_000102.stl" />
+        <mesh name="plate_6_000103" file="plate_6_000103.stl" />
+        <mesh name="plate_6_000104" file="plate_6_000104.stl" />
+        <mesh name="plate_6_000105" file="plate_6_000105.stl" />
+        <mesh name="plate_6_000106" file="plate_6_000106.stl" />
+        <mesh name="plate_6_000107" file="plate_6_000107.stl" />
+        <mesh name="plate_6_000108" file="plate_6_000108.stl" />
+        <mesh name="plate_6_000109" file="plate_6_000109.stl" />
+        <mesh name="plate_6_000110" file="plate_6_000110.stl" />
+        <mesh name="plate_6_000111" file="plate_6_000111.stl" />
+        <mesh name="plate_6_000112" file="plate_6_000112.stl" />
+        <mesh name="plate_6_000113" file="plate_6_000113.stl" />
+        <mesh name="plate_6_000114" file="plate_6_000114.stl" />
+        <mesh name="plate_6_000115" file="plate_6_000115.stl" />
+        <mesh name="plate_6_000116" file="plate_6_000116.stl" />
+        <mesh name="plate_6_000117" file="plate_6_000117.stl" />
+        <mesh name="plate_6_000118" file="plate_6_000118.stl" />
+        <mesh name="plate_6_000119" file="plate_6_000119.stl" />
+        <mesh name="plate_6_000120" file="plate_6_000120.stl" />
+        <mesh name="plate_6_000121" file="plate_6_000121.stl" />
+        <mesh name="plate_6_000122" file="plate_6_000122.stl" />
+        <mesh name="plate_6_000123" file="plate_6_000123.stl" />
+        <mesh name="plate_6_000124" file="plate_6_000124.stl" />
+        <mesh name="plate_6_000125" file="plate_6_000125.stl" />
+        <mesh name="plate_6_000126" file="plate_6_000126.stl" />
+        <mesh name="plate_6_000127" file="plate_6_000127.stl" />
+        <mesh name="plate_6_000128" file="plate_6_000128.stl" />
+        <mesh name="plate_6_000129" file="plate_6_000129.stl" />
+        <mesh name="plate_6_000130" file="plate_6_000130.stl" />
+        <mesh name="plate_6_000131" file="plate_6_000131.stl" />
+        <mesh name="plate_6_000132" file="plate_6_000132.stl" />
+        <mesh name="plate_6_000133" file="plate_6_000133.stl" />
+        <mesh name="plate_6_000134" file="plate_6_000134.stl" />
+        <mesh name="scissors_7_000000" file="scissors_7_000000.stl" />
+        <mesh name="scissors_7_000001" file="scissors_7_000001.stl" />
+        <mesh name="scissors_7_000002" file="scissors_7_000002.stl" />
+        <mesh name="scissors_7_000003" file="scissors_7_000003.stl" />
+        <mesh name="scissors_7_000004" file="scissors_7_000004.stl" />
+        <mesh name="scissors_7_000005" file="scissors_7_000005.stl" />
+        <mesh name="scissors_7_000006" file="scissors_7_000006.stl" />
+        <mesh name="scissors_7_000007" file="scissors_7_000007.stl" />
+        <mesh name="scissors_7_000008" file="scissors_7_000008.stl" />
+        <mesh name="scissors_7_000009" file="scissors_7_000009.stl" />
+        <mesh name="scissors_7_000010" file="scissors_7_000010.stl" />
+        <mesh name="scissors_7_000011" file="scissors_7_000011.stl" />
+        <mesh name="scissors_7_000012" file="scissors_7_000012.stl" />
+        <mesh name="scissors_7_000013" file="scissors_7_000013.stl" />
+        <mesh name="scissors_7_000014" file="scissors_7_000014.stl" />
+        <mesh name="scissors_7_000015" file="scissors_7_000015.stl" />
+        <mesh name="scissors_7_000016" file="scissors_7_000016.stl" />
+        <mesh name="scissors_7_000017" file="scissors_7_000017.stl" />
+        <mesh name="scissors_7_000018" file="scissors_7_000018.stl" />
+        <mesh name="scissors_7_000019" file="scissors_7_000019.stl" />
+        <mesh name="scissors_7_000020" file="scissors_7_000020.stl" />
+        <mesh name="scissors_7_000021" file="scissors_7_000021.stl" />
+        <mesh name="scissors_7_000022" file="scissors_7_000022.stl" />
+        <mesh name="soda_can1_8_000000" file="soda_can1_8_000000.stl" />
+        <mesh name="soda_can1_8_000001" file="soda_can1_8_000001.stl" />
+        <mesh name="soda_can1_8_000002" file="soda_can1_8_000002.stl" />
+        <mesh name="soda_can1_8_000003" file="soda_can1_8_000003.stl" />
+        <mesh name="soda_can1_8_000004" file="soda_can1_8_000004.stl" />
+        <mesh name="soda_can1_8_000005" file="soda_can1_8_000005.stl" />
+        <mesh name="soda_can1_8_000006" file="soda_can1_8_000006.stl" />
+        <mesh name="soda_can1_8_000007" file="soda_can1_8_000007.stl" />
+        <mesh name="soda_can1_8_000008" file="soda_can1_8_000008.stl" />
+        <mesh name="soda_can1_8_000009" file="soda_can1_8_000009.stl" />
+        <mesh name="soda_can1_8_000010" file="soda_can1_8_000010.stl" />
+        <mesh name="soda_can1_8_000011" file="soda_can1_8_000011.stl" />
+        <mesh name="soda_can1_8_000012" file="soda_can1_8_000012.stl" />
+        <mesh name="soda_can1_8_000013" file="soda_can1_8_000013.stl" />
+        <mesh name="soda_can1_8_000014" file="soda_can1_8_000014.stl" />
+        <mesh name="soda_can1_8_000015" file="soda_can1_8_000015.stl" />
+        <mesh name="soda_can1_8_000016" file="soda_can1_8_000016.stl" />
+        <mesh name="soda_can1_8_000017" file="soda_can1_8_000017.stl" />
+        <mesh name="soda_can1_8_000018" file="soda_can1_8_000018.stl" />
+        <mesh name="soda_can1_8_000019" file="soda_can1_8_000019.stl" />
+        <mesh name="soda_can1_8_000020" file="soda_can1_8_000020.stl" />
+        <mesh name="soda_can1_8_000021" file="soda_can1_8_000021.stl" />
+        <mesh name="soda_can1_8_000022" file="soda_can1_8_000022.stl" />
+        <mesh name="soda_can1_8_000023" file="soda_can1_8_000023.stl" />
+        <mesh name="soda_can1_8_000024" file="soda_can1_8_000024.stl" />
+        <mesh name="soda_can1_8_000025" file="soda_can1_8_000025.stl" />
+        <mesh name="soda_can1_8_000026" file="soda_can1_8_000026.stl" />
+        <mesh name="soda_can1_8_000027" file="soda_can1_8_000027.stl" />
+        <mesh name="soda_can1_8_000028" file="soda_can1_8_000028.stl" />
+        <mesh name="soda_can1_8_000029" file="soda_can1_8_000029.stl" />
+        <mesh name="soda_can1_8_000030" file="soda_can1_8_000030.stl" />
+        <mesh name="soda_can1_8_000031" file="soda_can1_8_000031.stl" />
+        <mesh name="soda_can1_8_000032" file="soda_can1_8_000032.stl" />
+        <mesh name="soda_can1_8_000033" file="soda_can1_8_000033.stl" />
+        <mesh name="soda_can1_8_000034" file="soda_can1_8_000034.stl" />
+        <mesh name="soda_can1_8_000035" file="soda_can1_8_000035.stl" />
+        <mesh name="soda_can1_8_000036" file="soda_can1_8_000036.stl" />
+        <mesh name="soda_can1_8_000037" file="soda_can1_8_000037.stl" />
+        <mesh name="soda_can1_8_000038" file="soda_can1_8_000038.stl" />
+        <mesh name="soda_can1_8_000039" file="soda_can1_8_000039.stl" />
+        <mesh name="soda_can1_8_000040" file="soda_can1_8_000040.stl" />
+        <mesh name="soda_can1_8_000041" file="soda_can1_8_000041.stl" />
+        <mesh name="soda_can1_8_000042" file="soda_can1_8_000042.stl" />
+        <mesh name="soda_can1_8_000043" file="soda_can1_8_000043.stl" />
+        <mesh name="soda_can1_8_000044" file="soda_can1_8_000044.stl" />
+        <mesh name="soda_can1_8_000045" file="soda_can1_8_000045.stl" />
+        <mesh name="soda_can1_8_000046" file="soda_can1_8_000046.stl" />
+        <mesh name="soda_can1_8_000047" file="soda_can1_8_000047.stl" />
+        <mesh name="soda_can1_8_000048" file="soda_can1_8_000048.stl" />
+        <mesh name="soda_can1_8_000049" file="soda_can1_8_000049.stl" />
+        <mesh name="soda_can1_8_000050" file="soda_can1_8_000050.stl" />
+        <mesh name="soda_can1_8_000051" file="soda_can1_8_000051.stl" />
+        <mesh name="soda_can1_8_000052" file="soda_can1_8_000052.stl" />
+        <mesh name="soda_can1_8_000053" file="soda_can1_8_000053.stl" />
+        <mesh name="soda_can1_8_000054" file="soda_can1_8_000054.stl" />
+        <mesh name="soda_can1_8_000055" file="soda_can1_8_000055.stl" />
+        <mesh name="soda_can1_8_000056" file="soda_can1_8_000056.stl" />
+        <mesh name="soda_can1_8_000057" file="soda_can1_8_000057.stl" />
+        <mesh name="soda_can1_8_000058" file="soda_can1_8_000058.stl" />
+        <mesh name="soda_can1_8_000059" file="soda_can1_8_000059.stl" />
+        <mesh name="soda_can1_8_000060" file="soda_can1_8_000060.stl" />
+        <mesh name="soda_can1_8_000061" file="soda_can1_8_000061.stl" />
+        <mesh name="soda_can1_8_000062" file="soda_can1_8_000062.stl" />
+        <mesh name="soda_can1_8_000063" file="soda_can1_8_000063.stl" />
+        <mesh name="soda_can1_8_000064" file="soda_can1_8_000064.stl" />
+        <mesh name="soda_can1_8_000065" file="soda_can1_8_000065.stl" />
+        <mesh name="soda_can1_8_000066" file="soda_can1_8_000066.stl" />
+        <mesh name="soda_can1_8_000067" file="soda_can1_8_000067.stl" />
+        <mesh name="soda_can1_8_000068" file="soda_can1_8_000068.stl" />
+        <mesh name="soda_can1_8_000069" file="soda_can1_8_000069.stl" />
+        <mesh name="soda_can1_8_000070" file="soda_can1_8_000070.stl" />
+        <mesh name="soda_can1_8_000071" file="soda_can1_8_000071.stl" />
+        <mesh name="soda_can1_8_000072" file="soda_can1_8_000072.stl" />
+        <mesh name="soda_can1_8_000073" file="soda_can1_8_000073.stl" />
+        <mesh name="soda_can1_8_000074" file="soda_can1_8_000074.stl" />
+        <mesh name="soda_can1_8_000075" file="soda_can1_8_000075.stl" />
+        <mesh name="soda_can1_8_000076" file="soda_can1_8_000076.stl" />
+        <mesh name="soda_can1_8_000077" file="soda_can1_8_000077.stl" />
+        <mesh name="soda_can1_8_000078" file="soda_can1_8_000078.stl" />
+        <mesh name="soda_can1_8_000079" file="soda_can1_8_000079.stl" />
+        <mesh name="soda_can1_8_000080" file="soda_can1_8_000080.stl" />
+        <mesh name="soda_can1_8_000081" file="soda_can1_8_000081.stl" />
+        <mesh name="soda_can1_8_000082" file="soda_can1_8_000082.stl" />
+        <mesh name="soda_can1_8_000083" file="soda_can1_8_000083.stl" />
+        <mesh name="soda_can1_8_000084" file="soda_can1_8_000084.stl" />
+        <mesh name="soda_can1_8_000085" file="soda_can1_8_000085.stl" />
+        <mesh name="soda_can1_8_000086" file="soda_can1_8_000086.stl" />
+        <mesh name="soda_can1_8_000087" file="soda_can1_8_000087.stl" />
+        <mesh name="soda_can1_8_000088" file="soda_can1_8_000088.stl" />
+        <mesh name="soda_can1_8_000089" file="soda_can1_8_000089.stl" />
+        <mesh name="soda_can1_8_000090" file="soda_can1_8_000090.stl" />
+        <mesh name="soda_can1_8_000091" file="soda_can1_8_000091.stl" />
+        <mesh name="soda_can1_8_000092" file="soda_can1_8_000092.stl" />
+        <mesh name="soda_can1_8_000093" file="soda_can1_8_000093.stl" />
+        <mesh name="soda_can1_8_000094" file="soda_can1_8_000094.stl" />
+        <mesh name="soda_can1_8_000095" file="soda_can1_8_000095.stl" />
+        <mesh name="soda_can1_8_000096" file="soda_can1_8_000096.stl" />
+        <mesh name="soda_can1_8_000097" file="soda_can1_8_000097.stl" />
+        <mesh name="soda_can1_8_000098" file="soda_can1_8_000098.stl" />
+        <mesh name="soda_can1_8_000099" file="soda_can1_8_000099.stl" />
+        <mesh name="soda_can1_8_000100" file="soda_can1_8_000100.stl" />
+        <mesh name="soda_can1_8_000101" file="soda_can1_8_000101.stl" />
+        <mesh name="soda_can1_8_000102" file="soda_can1_8_000102.stl" />
+        <mesh name="soda_can1_8_000103" file="soda_can1_8_000103.stl" />
+        <mesh name="soda_can1_8_000104" file="soda_can1_8_000104.stl" />
+        <mesh name="soda_can1_8_000105" file="soda_can1_8_000105.stl" />
+        <mesh name="soda_can1_8_000106" file="soda_can1_8_000106.stl" />
+        <mesh name="soda_can1_8_000107" file="soda_can1_8_000107.stl" />
+        <mesh name="soda_can1_8_000108" file="soda_can1_8_000108.stl" />
+        <mesh name="soda_can1_8_000109" file="soda_can1_8_000109.stl" />
+        <mesh name="soda_can1_8_000110" file="soda_can1_8_000110.stl" />
+        <mesh name="soda_can1_8_000111" file="soda_can1_8_000111.stl" />
+        <mesh name="soda_can1_8_000112" file="soda_can1_8_000112.stl" />
+        <mesh name="soda_can1_8_000113" file="soda_can1_8_000113.stl" />
+        <mesh name="soda_can1_8_000114" file="soda_can1_8_000114.stl" />
+        <mesh name="soda_can1_8_000115" file="soda_can1_8_000115.stl" />
+        <mesh name="soda_can1_8_000116" file="soda_can1_8_000116.stl" />
+        <mesh name="soda_can1_8_000117" file="soda_can1_8_000117.stl" />
+        <mesh name="soda_can1_8_000118" file="soda_can1_8_000118.stl" />
+        <mesh name="soda_can1_8_000119" file="soda_can1_8_000119.stl" />
+        <mesh name="soda_can1_8_000120" file="soda_can1_8_000120.stl" />
+        <mesh name="soda_can1_8_000121" file="soda_can1_8_000121.stl" />
+        <mesh name="soda_can1_8_000122" file="soda_can1_8_000122.stl" />
+        <mesh name="soda_can1_8_000123" file="soda_can1_8_000123.stl" />
+        <mesh name="soda_can1_8_000124" file="soda_can1_8_000124.stl" />
+        <mesh name="soda_can1_8_000125" file="soda_can1_8_000125.stl" />
+        <mesh name="soda_can1_8_000126" file="soda_can1_8_000126.stl" />
+        <mesh name="soda_can1_8_000127" file="soda_can1_8_000127.stl" />
+        <mesh name="soda_can1_8_000128" file="soda_can1_8_000128.stl" />
+        <mesh name="soda_can1_8_000129" file="soda_can1_8_000129.stl" />
+        <mesh name="soda_can1_8_000130" file="soda_can1_8_000130.stl" />
+        <mesh name="soda_can1_8_000131" file="soda_can1_8_000131.stl" />
+        <mesh name="soda_can1_8_000132" file="soda_can1_8_000132.stl" />
+        <mesh name="soda_can1_8_000133" file="soda_can1_8_000133.stl" />
+        <mesh name="soda_can1_8_000134" file="soda_can1_8_000134.stl" />
+        <mesh name="soda_can1_8_000135" file="soda_can1_8_000135.stl" />
+        <mesh name="soda_can1_8_000136" file="soda_can1_8_000136.stl" />
+        <mesh name="soda_can1_8_000137" file="soda_can1_8_000137.stl" />
+        <mesh name="soda_can1_8_000138" file="soda_can1_8_000138.stl" />
+        <mesh name="soda_can1_8_000139" file="soda_can1_8_000139.stl" />
+        <mesh name="soda_can1_8_000140" file="soda_can1_8_000140.stl" />
+        <mesh name="soda_can1_8_000141" file="soda_can1_8_000141.stl" />
+        <mesh name="soda_can1_8_000142" file="soda_can1_8_000142.stl" />
+        <mesh name="soda_can1_8_000143" file="soda_can1_8_000143.stl" />
+        <mesh name="soda_can1_8_000144" file="soda_can1_8_000144.stl" />
+        <mesh name="soda_can1_8_000145" file="soda_can1_8_000145.stl" />
+        <mesh name="soda_can1_8_000146" file="soda_can1_8_000146.stl" />
+        <mesh name="soda_can1_8_000147" file="soda_can1_8_000147.stl" />
+        <mesh name="soda_can1_8_000148" file="soda_can1_8_000148.stl" />
+        <mesh name="soda_can1_8_000149" file="soda_can1_8_000149.stl" />
+        <mesh name="soda_can2_9_000000" file="soda_can2_9_000000.stl" />
+        <mesh name="soda_can2_9_000001" file="soda_can2_9_000001.stl" />
+        <mesh name="soda_can2_9_000002" file="soda_can2_9_000002.stl" />
+        <mesh name="soda_can2_9_000003" file="soda_can2_9_000003.stl" />
+        <mesh name="soda_can2_9_000004" file="soda_can2_9_000004.stl" />
+        <mesh name="soda_can2_9_000005" file="soda_can2_9_000005.stl" />
+        <mesh name="soda_can2_9_000006" file="soda_can2_9_000006.stl" />
+        <mesh name="soda_can2_9_000007" file="soda_can2_9_000007.stl" />
+        <mesh name="soda_can2_9_000008" file="soda_can2_9_000008.stl" />
+        <mesh name="soda_can2_9_000009" file="soda_can2_9_000009.stl" />
+        <mesh name="soda_can2_9_000010" file="soda_can2_9_000010.stl" />
+        <mesh name="soda_can2_9_000011" file="soda_can2_9_000011.stl" />
+        <mesh name="soda_can2_9_000012" file="soda_can2_9_000012.stl" />
+        <mesh name="soda_can2_9_000013" file="soda_can2_9_000013.stl" />
+        <mesh name="soda_can2_9_000014" file="soda_can2_9_000014.stl" />
+        <mesh name="soda_can2_9_000015" file="soda_can2_9_000015.stl" />
+        <mesh name="soda_can2_9_000016" file="soda_can2_9_000016.stl" />
+        <mesh name="soda_can2_9_000017" file="soda_can2_9_000017.stl" />
+        <mesh name="soda_can2_9_000018" file="soda_can2_9_000018.stl" />
+        <mesh name="soda_can2_9_000019" file="soda_can2_9_000019.stl" />
+        <mesh name="soda_can2_9_000020" file="soda_can2_9_000020.stl" />
+        <mesh name="soda_can2_9_000021" file="soda_can2_9_000021.stl" />
+        <mesh name="soda_can2_9_000022" file="soda_can2_9_000022.stl" />
+        <mesh name="soda_can2_9_000023" file="soda_can2_9_000023.stl" />
+        <mesh name="soda_can2_9_000024" file="soda_can2_9_000024.stl" />
+        <mesh name="soda_can2_9_000025" file="soda_can2_9_000025.stl" />
+        <mesh name="soda_can2_9_000026" file="soda_can2_9_000026.stl" />
+        <mesh name="soda_can2_9_000027" file="soda_can2_9_000027.stl" />
+        <mesh name="soda_can2_9_000028" file="soda_can2_9_000028.stl" />
+        <mesh name="soda_can2_9_000029" file="soda_can2_9_000029.stl" />
+        <mesh name="soda_can2_9_000030" file="soda_can2_9_000030.stl" />
+        <mesh name="soda_can2_9_000031" file="soda_can2_9_000031.stl" />
+        <mesh name="soda_can2_9_000032" file="soda_can2_9_000032.stl" />
+        <mesh name="soda_can2_9_000033" file="soda_can2_9_000033.stl" />
+        <mesh name="soda_can2_9_000034" file="soda_can2_9_000034.stl" />
+        <mesh name="soda_can2_9_000035" file="soda_can2_9_000035.stl" />
+        <mesh name="soda_can2_9_000036" file="soda_can2_9_000036.stl" />
+        <mesh name="soda_can2_9_000037" file="soda_can2_9_000037.stl" />
+        <mesh name="soda_can2_9_000038" file="soda_can2_9_000038.stl" />
+        <mesh name="soda_can2_9_000039" file="soda_can2_9_000039.stl" />
+        <mesh name="soda_can2_9_000040" file="soda_can2_9_000040.stl" />
+        <mesh name="soda_can2_9_000041" file="soda_can2_9_000041.stl" />
+        <mesh name="soda_can2_9_000042" file="soda_can2_9_000042.stl" />
+        <mesh name="soda_can2_9_000043" file="soda_can2_9_000043.stl" />
+        <mesh name="soda_can2_9_000044" file="soda_can2_9_000044.stl" />
+        <mesh name="soda_can2_9_000045" file="soda_can2_9_000045.stl" />
+        <mesh name="soda_can2_9_000046" file="soda_can2_9_000046.stl" />
+        <mesh name="soda_can2_9_000047" file="soda_can2_9_000047.stl" />
+        <mesh name="soda_can2_9_000048" file="soda_can2_9_000048.stl" />
+        <mesh name="soda_can2_9_000049" file="soda_can2_9_000049.stl" />
+        <mesh name="soda_can2_9_000050" file="soda_can2_9_000050.stl" />
+        <mesh name="soda_can2_9_000051" file="soda_can2_9_000051.stl" />
+        <mesh name="soda_can2_9_000052" file="soda_can2_9_000052.stl" />
+        <mesh name="soda_can2_9_000053" file="soda_can2_9_000053.stl" />
+        <mesh name="soda_can2_9_000054" file="soda_can2_9_000054.stl" />
+        <mesh name="soda_can2_9_000055" file="soda_can2_9_000055.stl" />
+        <mesh name="soda_can2_9_000056" file="soda_can2_9_000056.stl" />
+        <mesh name="soda_can2_9_000057" file="soda_can2_9_000057.stl" />
+        <mesh name="soda_can2_9_000058" file="soda_can2_9_000058.stl" />
+        <mesh name="soda_can2_9_000059" file="soda_can2_9_000059.stl" />
+        <mesh name="soda_can2_9_000060" file="soda_can2_9_000060.stl" />
+        <mesh name="soda_can2_9_000061" file="soda_can2_9_000061.stl" />
+        <mesh name="soda_can2_9_000062" file="soda_can2_9_000062.stl" />
+        <mesh name="soda_can2_9_000063" file="soda_can2_9_000063.stl" />
+        <mesh name="soda_can2_9_000064" file="soda_can2_9_000064.stl" />
+        <mesh name="soda_can2_9_000065" file="soda_can2_9_000065.stl" />
+        <mesh name="soda_can2_9_000066" file="soda_can2_9_000066.stl" />
+        <mesh name="soda_can2_9_000067" file="soda_can2_9_000067.stl" />
+        <mesh name="soda_can2_9_000068" file="soda_can2_9_000068.stl" />
+        <mesh name="soda_can2_9_000069" file="soda_can2_9_000069.stl" />
+        <mesh name="soda_can2_9_000070" file="soda_can2_9_000070.stl" />
+        <mesh name="soda_can2_9_000071" file="soda_can2_9_000071.stl" />
+        <mesh name="soda_can2_9_000072" file="soda_can2_9_000072.stl" />
+        <mesh name="soda_can2_9_000073" file="soda_can2_9_000073.stl" />
+        <mesh name="soda_can2_9_000074" file="soda_can2_9_000074.stl" />
+        <mesh name="soda_can2_9_000075" file="soda_can2_9_000075.stl" />
+        <mesh name="soda_can2_9_000076" file="soda_can2_9_000076.stl" />
+        <mesh name="soda_can2_9_000077" file="soda_can2_9_000077.stl" />
+        <mesh name="soda_can2_9_000078" file="soda_can2_9_000078.stl" />
+        <mesh name="soda_can2_9_000079" file="soda_can2_9_000079.stl" />
+        <mesh name="soda_can2_9_000080" file="soda_can2_9_000080.stl" />
+        <mesh name="soda_can2_9_000081" file="soda_can2_9_000081.stl" />
+        <mesh name="soda_can2_9_000082" file="soda_can2_9_000082.stl" />
+        <mesh name="soda_can2_9_000083" file="soda_can2_9_000083.stl" />
+        <mesh name="soda_can2_9_000084" file="soda_can2_9_000084.stl" />
+        <mesh name="soda_can2_9_000085" file="soda_can2_9_000085.stl" />
+        <mesh name="soda_can2_9_000086" file="soda_can2_9_000086.stl" />
+        <mesh name="soda_can2_9_000087" file="soda_can2_9_000087.stl" />
+        <mesh name="soda_can2_9_000088" file="soda_can2_9_000088.stl" />
+        <mesh name="soda_can2_9_000089" file="soda_can2_9_000089.stl" />
+        <mesh name="soda_can2_9_000090" file="soda_can2_9_000090.stl" />
+        <mesh name="soda_can2_9_000091" file="soda_can2_9_000091.stl" />
+        <mesh name="soda_can2_9_000092" file="soda_can2_9_000092.stl" />
+        <mesh name="soda_can2_9_000093" file="soda_can2_9_000093.stl" />
+        <mesh name="soda_can2_9_000094" file="soda_can2_9_000094.stl" />
+        <mesh name="soda_can2_9_000095" file="soda_can2_9_000095.stl" />
+        <mesh name="soda_can2_9_000096" file="soda_can2_9_000096.stl" />
+        <mesh name="soda_can2_9_000097" file="soda_can2_9_000097.stl" />
+        <mesh name="soda_can2_9_000098" file="soda_can2_9_000098.stl" />
+        <mesh name="soda_can2_9_000099" file="soda_can2_9_000099.stl" />
+        <mesh name="soda_can2_9_000100" file="soda_can2_9_000100.stl" />
+        <mesh name="soda_can2_9_000101" file="soda_can2_9_000101.stl" />
+        <mesh name="soda_can2_9_000102" file="soda_can2_9_000102.stl" />
+        <mesh name="soda_can2_9_000103" file="soda_can2_9_000103.stl" />
+        <mesh name="soda_can2_9_000104" file="soda_can2_9_000104.stl" />
+        <mesh name="soda_can2_9_000105" file="soda_can2_9_000105.stl" />
+        <mesh name="soda_can2_9_000106" file="soda_can2_9_000106.stl" />
+        <mesh name="soda_can2_9_000107" file="soda_can2_9_000107.stl" />
+        <mesh name="soda_can2_9_000108" file="soda_can2_9_000108.stl" />
+        <mesh name="soda_can2_9_000109" file="soda_can2_9_000109.stl" />
+        <mesh name="soda_can2_9_000110" file="soda_can2_9_000110.stl" />
+        <mesh name="soda_can2_9_000111" file="soda_can2_9_000111.stl" />
+        <mesh name="soda_can2_9_000112" file="soda_can2_9_000112.stl" />
+        <mesh name="soda_can2_9_000113" file="soda_can2_9_000113.stl" />
+        <mesh name="soda_can2_9_000114" file="soda_can2_9_000114.stl" />
+        <mesh name="soda_can2_9_000115" file="soda_can2_9_000115.stl" />
+        <mesh name="soda_can2_9_000116" file="soda_can2_9_000116.stl" />
+        <mesh name="soda_can2_9_000117" file="soda_can2_9_000117.stl" />
+        <mesh name="soda_can2_9_000118" file="soda_can2_9_000118.stl" />
+        <mesh name="soda_can2_9_000119" file="soda_can2_9_000119.stl" />
+        <mesh name="soda_can2_9_000120" file="soda_can2_9_000120.stl" />
+        <mesh name="soda_can2_9_000121" file="soda_can2_9_000121.stl" />
+        <mesh name="soda_can2_9_000122" file="soda_can2_9_000122.stl" />
+        <mesh name="soda_can2_9_000123" file="soda_can2_9_000123.stl" />
+        <mesh name="soda_can2_9_000124" file="soda_can2_9_000124.stl" />
+        <mesh name="soda_can2_9_000125" file="soda_can2_9_000125.stl" />
+        <mesh name="soda_can2_9_000126" file="soda_can2_9_000126.stl" />
+        <mesh name="soda_can2_9_000127" file="soda_can2_9_000127.stl" />
+        <mesh name="soda_can2_9_000128" file="soda_can2_9_000128.stl" />
+        <mesh name="soda_can2_9_000129" file="soda_can2_9_000129.stl" />
+        <mesh name="soda_can2_9_000130" file="soda_can2_9_000130.stl" />
+        <mesh name="soda_can2_9_000131" file="soda_can2_9_000131.stl" />
+        <mesh name="soda_can2_9_000132" file="soda_can2_9_000132.stl" />
+        <mesh name="soda_can2_9_000133" file="soda_can2_9_000133.stl" />
+        <mesh name="soda_can2_9_000134" file="soda_can2_9_000134.stl" />
+        <mesh name="soda_can2_9_000135" file="soda_can2_9_000135.stl" />
+        <mesh name="soda_can2_9_000136" file="soda_can2_9_000136.stl" />
+        <mesh name="soda_can2_9_000137" file="soda_can2_9_000137.stl" />
+        <mesh name="soda_can2_9_000138" file="soda_can2_9_000138.stl" />
+        <mesh name="soda_can2_9_000139" file="soda_can2_9_000139.stl" />
+        <mesh name="soda_can2_9_000140" file="soda_can2_9_000140.stl" />
+        <mesh name="soda_can2_9_000141" file="soda_can2_9_000141.stl" />
+        <mesh name="soda_can2_9_000142" file="soda_can2_9_000142.stl" />
+        <mesh name="soda_can2_9_000143" file="soda_can2_9_000143.stl" />
+        <mesh name="soda_can2_9_000144" file="soda_can2_9_000144.stl" />
+        <mesh name="soda_can2_9_000145" file="soda_can2_9_000145.stl" />
+        <mesh name="soda_can2_9_000146" file="soda_can2_9_000146.stl" />
+        <mesh name="soda_can2_9_000147" file="soda_can2_9_000147.stl" />
+        <mesh name="soda_can2_9_000148" file="soda_can2_9_000148.stl" />
+        <mesh name="soda_can2_9_000149" file="soda_can2_9_000149.stl" />
+        <mesh name="spoon_10_000000" file="spoon_10_000000.stl" />
+        <mesh name="spoon_10_000001" file="spoon_10_000001.stl" />
+        <mesh name="spoon_10_000002" file="spoon_10_000002.stl" />
+        <mesh name="spoon_10_000003" file="spoon_10_000003.stl" />
+        <mesh name="spoon_10_000004" file="spoon_10_000004.stl" />
+        <mesh name="spoon_10_000005" file="spoon_10_000005.stl" />
+        <mesh name="spoon_10_000006" file="spoon_10_000006.stl" />
+        <mesh name="spoon_10_000007" file="spoon_10_000007.stl" />
+        <mesh name="wine_glass_11_000000" file="wine_glass_11_000000.stl" />
+        <mesh name="wine_glass_11_000001" file="wine_glass_11_000001.stl" />
+        <mesh name="wine_glass_11_000002" file="wine_glass_11_000002.stl" />
+        <mesh name="wine_glass_11_000003" file="wine_glass_11_000003.stl" />
+        <mesh name="wine_glass_11_000004" file="wine_glass_11_000004.stl" />
+        <mesh name="wine_glass_11_000005" file="wine_glass_11_000005.stl" />
+        <mesh name="wine_glass_11_000006" file="wine_glass_11_000006.stl" />
+        <mesh name="wine_glass_11_000007" file="wine_glass_11_000007.stl" />
+    </asset>
+    <worldbody>
+        <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link" />
+        <geom size="0.6925 0.4275 0.44" pos="0.4 0 -0.44" type="box" rgba="0.4 0.4 0.4 1" />
+        <geom size="0.012525 0.045 0.0125" pos="1.1894 0.0999575 0.3125" quat="-0.00200367 0 0 0.999998" type="box" />
+        <geom size="0.012525 0.045 0.0125" pos="1.1894 -0.100042 0.3125" quat="-0.00200367 0 0 0.999998" type="box" />
+        <body name="shoulder_link" pos="0 0 0.15643" quat="-3.67321e-06 1 0 0">
+            <inertial pos="-2.3e-05 -0.010364 -0.07336" quat="0.707051 0.0451246 -0.0453544 0.704263" mass="1.3773" diaginertia="0.00488868 0.00457 0.00135132" />
+            <joint name="joint_1" pos="0 0 0" axis="0 0 1" />
+            <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="shoulder_link" />
+            <body name="half_arm_1_link" pos="0 0.005375 -0.12838" quat="0.707105 0.707108 0 0">
+                <inertial pos="-4.4e-05 -0.09958 -0.013278" quat="0.482348 0.516286 -0.516862 0.483366" mass="1.1636" diaginertia="0.0113017 0.011088 0.00102532" />
+                <joint name="joint_2" pos="0 0 0" axis="0 0 1" limited="true" range="-2.199 2.199" />
+                <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="half_arm_1_link" />
+                <body name="half_arm_2_link" pos="0 -0.21038 -0.006375" quat="0.707105 -0.707108 0 0">
+                    <inertial pos="-4.4e-05 -0.006641 -0.117892" quat="0.706144 0.0213722 -0.0209128 0.707437" mass="1.1636" diaginertia="0.0111633 0.010932 0.00100671" />
+                    <joint name="joint_3" pos="0 0 0" axis="0 0 1" />
+                    <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="half_arm_2_link" />
+                    <body name="forearm_link" pos="0 0.006375 -0.21038" quat="0.707105 0.707108 0 0">
+                        <inertial pos="-1.8e-05 -0.075478 -0.015006" quat="0.483678 0.515961 -0.515859 0.483455" mass="0.9302" diaginertia="0.00834839 0.008147 0.000598606" />
+                        <joint name="joint_4" pos="0 0 0" axis="0 0 1" limited="true" range="-2.565 2.565" />
+                        <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="forearm_link" />
+                        <body name="spherical_wrist_1_link" pos="0 -0.20843 -0.006375" quat="0.707105 -0.707108 0 0">
+                            <inertial pos="1e-06 -0.009432 -0.063883" quat="0.703558 0.0707492 -0.0707492 0.703558" mass="0.6781" diaginertia="0.00165901 0.001596 0.000346988" />
+                            <joint name="joint_5" pos="0 0 0" axis="0 0 1" />
+                            <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="spherical_wrist_1_link" />
+                            <body name="spherical_wrist_2_link" pos="0 0.00017505 -0.10593" quat="0.707105 0.707108 0 0">
+                                <inertial pos="1e-06 -0.045483 -0.00965" quat="0.44426 0.550121 -0.550121 0.44426" mass="0.6781" diaginertia="0.00170087 0.001641 0.00035013" />
+                                <joint name="joint_6" pos="0 0 0" axis="0 0 1" limited="true" range="-2.042 2.042" />
+                                <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="spherical_wrist_2_link" />
+                                <body name="bracelet_link" pos="0 -0.10593 -0.00017505" quat="0.707105 -0.707108 0 0">
+                                    <inertial pos="0.00019484 0.00784697 -0.0494958" quat="0.978864 -0.204294 0.00112099 0.00938286" mass="0.72652" diaginertia="0.00140785 0.00129175 0.000663556" />
+                                    <joint name="joint_7" pos="0 0 0" axis="0 0 1" />
+                                    <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="bracelet_with_vision_link" />
+                                    <geom pos="0 0 -0.061525" quat="0 0.707388 -0.706825 0" type="mesh" rgba="0.1 0.1 0.1 1" mesh="robotiq_arg2f_base_link" />
+                                    <body name="left_outer_knuckle" pos="0.0306011 2.43685e-05 -0.116429" quat="0 -0.706825 -0.707388 0">
+                                        <inertial pos="0.000163875 0.0554825 -0.0100755" quat="0.920541 0.390623 -0.00362953 0.00231744" mass="0.0311462" diaginertia="5.11372e-05 4.89464e-05 4.95906e-06" />
+                                        <joint name="finger_joint" pos="0 0 0" axis="1 0 0" limited="true" range="0 0.8" />
+                                        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="robotiq_arg2f_85_outer_knuckle" />
+                                        <geom pos="0 0.0315 -0.0041" type="mesh" rgba="0.1 0.1 0.1 1" mesh="robotiq_arg2f_85_outer_finger" />
+                                        <body name="left_inner_finger" pos="0 0.0376 0.043">
+                                            <inertial pos="0.000199506 0.0032692 0.00175282" quat="0.933621 0.35825 -0.00273441 0.00104851" mass="0.0156391" diaginertia="1.57977e-05 1.51089e-05 1.4647e-06" />
+                                            <joint name="left_inner_finger_joint" pos="0 0 0" axis="1 0 0" limited="true" range="-0.8757 0.8757" />
+                                            <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="robotiq_arg2f_85_inner_finger" />
+                                            <geom size="0.011 0.003175 0.01875" pos="0 -0.0220203 0.03242" type="box" rgba="0.9 0.9 0.9 1" />
+                                        </body>
+                                    </body>
+                                    <body name="left_inner_knuckle" pos="0.0127 1.01133e-05 -0.122945" quat="0 -0.706825 -0.707388 0">
+                                        <inertial pos="0.000123012 0.0507851 0.00103969" quat="0.497203 0.502496 -0.507943 0.492221" mass="0.0271177" diaginertia="2.83809e-05 2.61936e-05 2.81319e-06" />
+                                        <joint name="left_inner_knuckle_joint" pos="0 0 0" axis="1 0 0" limited="true" range="0 0.8757" />
+                                        <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="robotiq_arg2f_85_inner_knuckle" />
+                                    </body>
+                                    <body name="right_outer_knuckle" pos="-0.0306011 -2.43685e-05 -0.116429" quat="0 0.707388 -0.706825 0">
+                                        <inertial pos="0.000163875 0.0554825 -0.0100755" quat="0.920541 0.390623 -0.00362953 0.00231744" mass="0.0311462" diaginertia="5.11372e-05 4.89464e-05 4.95906e-06" />
+                                        <joint name="right_outer_knuckle_joint" pos="0 0 0" axis="1 0 0" limited="true" range="0 0.81" />
+                                        <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="robotiq_arg2f_85_outer_knuckle" />
+                                        <geom pos="0 0.0315 -0.0041" type="mesh" rgba="0.1 0.1 0.1 1" mesh="robotiq_arg2f_85_outer_finger" />
+                                        <body name="right_inner_finger" pos="0 0.0376 0.043">
+                                            <inertial pos="0.000199506 0.0032692 0.00175282" quat="0.933621 0.35825 -0.00273441 0.00104851" mass="0.0156391" diaginertia="1.57977e-05 1.51089e-05 1.4647e-06" />
+                                            <joint name="right_inner_finger_joint" pos="0 0 0" axis="1 0 0" limited="true" range="-0.8757 0.8757" />
+                                            <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="robotiq_arg2f_85_inner_finger" />
+                                            <geom size="0.011 0.003175 0.01875" pos="0 -0.0220203 0.03242" type="box" rgba="0.9 0.9 0.9 1" />
+                                        </body>
+                                    </body>
+                                    <body name="right_inner_knuckle" pos="-0.0127 -1.01133e-05 -0.122945" quat="0 0.707388 -0.706825 0">
+                                        <inertial pos="0.000123012 0.0507851 0.00103969" quat="0.497203 0.502496 -0.507943 0.492221" mass="0.0271177" diaginertia="2.83809e-05 2.61936e-05 2.81319e-06" />
+                                        <joint name="right_inner_knuckle_joint" pos="0 0 0" axis="1 0 0" limited="true" range="0 0.8757" />
+                                        <geom type="mesh" rgba="0.1 0.1 0.1 1" mesh="robotiq_arg2f_85_inner_knuckle" />
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+        <body name="sponge" pos="0 0 2">
+          <freejoint/>
+          <composite type="ellipsoid" count="5 7 9" spacing="0.05">
+          <skin texcoord="true" material="matsponge" rgba=".7 .7 .7 1"/>
+          <geom type="capsule" size=".015 0.05" rgba=".8 .2 .1 1"/>
+          </composite>
+        </body>
+        <body name="bowl_0_visual" pos="0.31985 0.0792837 0" quat="0.853096 0 0 0.521754">
+            <inertial pos="-0.00106935 0.00109177 0.0322728" quat="0.359195 0.618595 -0.37345 0.590639" mass="0.321259" diaginertia="0.00079712 0.000488441 0.00046517" />
+            <joint name="joint_world_bowl_0" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000007" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000008" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000009" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000010" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000011" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000012" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000013" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000014" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000015" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000016" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000017" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="bowl_0_000018" />
+        </body>
+        <body name="fork_1_visual" pos="0.671923 -0.221443 0" quat="0.9688 0 0 0.247845">
+            <inertial pos="0.000518002 -0.0013117 0.00408709" quat="0.61606 0.592447 -0.357857 0.376053" mass="0.00850732" diaginertia="2.72179e-05 2.72026e-05 1.65277e-07" />
+            <joint name="joint_world_fork_1" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000007" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000008" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000009" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000010" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000011" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000012" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000013" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000014" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000015" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000016" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000017" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000018" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000019" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000020" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000021" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000022" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000023" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000024" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="fork_1_000025" />
+        </body>
+        <body name="glass_2_visual" pos="0.621392 0.129796 -5.96046e-09" quat="0.164187 0 0 0.986429">
+            <inertial pos="-7.68898e-06 -0.000161725 0.0382165" quat="0.919393 -0.0256235 0.0146822 0.392231" mass="0.264295" diaginertia="0.000290377 0.000285586 0.000261678" />
+            <joint name="joint_world_glass_2" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000007" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000008" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000009" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000010" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000011" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000012" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000013" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000014" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000015" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000016" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000017" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000018" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000019" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000020" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000021" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000022" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000023" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000024" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000025" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000026" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000027" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000028" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="glass_2_000029" />
+        </body>
+        <body name="mug_4_visual" pos="0.220977 -0.168703 0" quat="0.123601 0 0 0.992332">
+            <inertial pos="-2.40158e-05 0.0130922 0.0391354" quat="0.931012 0.364691 0.0117941 0.00878499" mass="0.409381" diaginertia="0.0005489 0.000481368 0.000430482" />
+            <joint name="joint_world_mug_4" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000007" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000008" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000009" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000010" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000011" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000012" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000013" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000014" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000015" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000016" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000017" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000018" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000019" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000020" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000021" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000022" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000023" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000024" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000025" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000026" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000027" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000028" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000029" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000030" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000031" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000032" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000033" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000034" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000035" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000036" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000037" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000038" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000039" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000040" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000041" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000042" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000043" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000044" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000045" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="mug_4_000046" />
+        </body>
+        <body name="pan_5_visual" pos="0.11972 0.181844 0" quat="0.988362 0 0 0.152123">
+            <inertial pos="-0.000801112 0.102162 0.0173172" quat="0.499993 0.499218 -0.493076 0.507607" mass="1.10824" diaginertia="0.0129999 0.00861383 0.00463887" />
+            <joint name="joint_world_pan_5" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000007" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000008" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000009" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000010" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000011" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000012" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000013" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000014" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000015" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000016" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000017" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000018" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000019" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000020" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000021" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000022" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000023" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000024" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000025" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000026" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000027" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000028" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000029" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000030" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000031" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000032" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000033" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000034" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000035" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000036" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000037" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000038" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000039" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000040" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000041" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000042" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000043" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000044" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000045" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000046" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000047" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000048" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000049" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000050" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000051" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000052" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000053" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000054" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000055" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000056" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000057" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000058" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000059" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000060" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000061" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000062" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000063" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000064" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000065" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000066" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000067" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000068" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000069" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000070" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000071" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000072" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000073" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000074" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000075" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000076" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000077" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000078" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000079" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000080" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000081" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000082" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000083" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000084" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000085" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="pan_5_000086" />
+        </body>
+        <body name="plate_6_visual" pos="0.471235 -0.32045 0" quat="0.786396 0 0 0.617722">
+            <inertial pos="0.000239751 0.000364041 0.0107083" quat="0.336502 0.622109 -0.336315 0.621802" mass="0.281499" diaginertia="0.00236812 0.00120955 0.00119374" />
+            <joint name="joint_world_plate_6" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000007" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000008" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000009" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000010" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000011" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000012" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000013" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000014" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000015" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000016" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000017" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000018" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000019" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000020" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000021" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000022" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000023" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000024" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000025" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000026" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000027" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000028" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000029" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000030" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000031" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000032" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000033" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000034" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000035" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000036" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000037" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000038" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000039" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000040" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000041" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000042" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000043" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000044" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000045" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000046" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000047" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000048" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000049" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000050" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000051" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000052" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000053" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000054" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000055" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000056" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000057" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000058" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000059" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000060" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000061" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000062" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000063" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000064" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000065" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000066" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000067" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000068" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000069" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000070" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000071" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000072" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000073" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000074" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000075" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000076" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000077" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000078" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000079" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000080" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000081" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000082" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000083" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000084" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000085" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000086" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000087" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000088" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000089" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000090" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000091" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000092" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000093" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000094" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000095" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000096" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000097" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000098" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000099" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000100" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000101" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000102" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000103" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000104" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000105" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000106" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000107" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000108" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000109" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000110" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000111" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000112" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000113" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000114" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000115" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000116" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000117" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000118" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000119" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000120" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000121" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000122" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000123" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000124" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000125" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000126" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000127" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000128" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000129" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000130" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000131" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000132" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000133" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="plate_6_000134" />
+        </body>
+        <body name="scissors_7_visual" pos="0.521997 0.0310599 0" quat="0.881715 0 0 0.471782">
+            <inertial pos="-0.00250771 0.0289407 0.00950434" quat="0.0525886 0.744568 -0.0434693 0.66405" mass="0.0333148" diaginertia="4.92505e-05 3.23273e-05 1.72488e-05" />
+            <joint name="joint_world_scissors_7" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000007" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000008" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000009" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000010" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000011" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000012" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000013" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000014" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000015" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000016" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000017" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000018" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000019" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000020" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000021" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="scissors_7_000022" />
+        </body>
+        <body name="soda_can1_8_visual" pos="0.270143 -0.0187708 0" quat="0.908508 0 0 0.417867">
+            <inertial pos="0.00031301 0.000333314 0.0538667" quat="0.743996 0.00265321 0.00280022 0.668173" mass="0.426179" diaginertia="0.000593469 0.000589484 0.000194971" />
+            <joint name="joint_world_soda_can1_8" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000007" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000008" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000009" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000010" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000011" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000012" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000013" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000014" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000015" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000016" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000017" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000018" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000019" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000020" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000021" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000022" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000023" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000024" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000025" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000026" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000027" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000028" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000029" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000030" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000031" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000032" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000033" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000034" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000035" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000036" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000037" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000038" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000039" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000040" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000041" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000042" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000043" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000044" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000045" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000046" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000047" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000048" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000049" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000050" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000051" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000052" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000053" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000054" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000055" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000056" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000057" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000058" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000059" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000060" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000061" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000062" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000063" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000064" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000065" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000066" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000067" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000068" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000069" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000070" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000071" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000072" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000073" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000074" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000075" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000076" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000077" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000078" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000079" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000080" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000081" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000082" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000083" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000084" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000085" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000086" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000087" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000088" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000089" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000090" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000091" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000092" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000093" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000094" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000095" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000096" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000097" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000098" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000099" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000100" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000101" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000102" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000103" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000104" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000105" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000106" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000107" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000108" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000109" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000110" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000111" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000112" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000113" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000114" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000115" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000116" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000117" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000118" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000119" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000120" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000121" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000122" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000123" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000124" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000125" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000126" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000127" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000128" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000129" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000130" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000131" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000132" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000133" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000134" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000135" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000136" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000137" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000138" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000139" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000140" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000141" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000142" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000143" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000144" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000145" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000146" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000147" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000148" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can1_8_000149" />
+        </body>
+        <body name="soda_can2_9_visual" pos="0.369729 0.228416 0" quat="0.982613 0 0 0.185667">
+            <inertial pos="0.00031301 0.000333314 0.0538667" quat="0.743996 0.00265321 0.00280022 0.668173" mass="0.426179" diaginertia="0.000593469 0.000589484 0.000194971" />
+            <joint name="joint_world_soda_can2_9" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000007" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000008" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000009" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000010" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000011" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000012" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000013" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000014" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000015" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000016" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000017" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000018" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000019" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000020" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000021" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000022" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000023" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000024" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000025" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000026" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000027" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000028" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000029" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000030" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000031" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000032" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000033" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000034" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000035" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000036" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000037" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000038" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000039" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000040" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000041" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000042" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000043" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000044" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000045" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000046" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000047" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000048" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000049" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000050" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000051" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000052" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000053" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000054" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000055" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000056" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000057" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000058" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000059" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000060" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000061" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000062" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000063" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000064" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000065" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000066" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000067" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000068" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000069" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000070" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000071" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000072" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000073" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000074" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000075" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000076" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000077" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000078" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000079" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000080" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000081" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000082" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000083" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000084" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000085" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000086" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000087" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000088" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000089" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000090" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000091" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000092" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000093" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000094" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000095" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000096" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000097" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000098" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000099" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000100" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000101" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000102" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000103" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000104" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000105" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000106" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000107" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000108" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000109" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000110" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000111" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000112" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000113" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000114" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000115" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000116" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000117" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000118" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000119" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000120" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000121" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000122" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000123" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000124" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000125" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000126" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000127" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000128" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000129" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000130" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000131" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000132" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000133" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000134" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000135" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000136" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000137" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000138" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000139" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000140" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000141" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000142" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000143" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000144" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000145" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000146" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000147" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000148" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="soda_can2_9_000149" />
+        </body>
+        <body name="spoon_10_visual" pos="0.41901 -0.0700178 0" quat="0.962928 0 0 0.26976">
+            <inertial pos="0.000138002 -0.0310003 0.00557439" quat="0.497128 0.506397 -0.501689 0.494705" mass="0.0142065" diaginertia="4.37514e-05 4.29829e-05 8.34898e-07" />
+            <joint name="joint_world_spoon_10" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="spoon_10_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="spoon_10_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="spoon_10_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="spoon_10_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="spoon_10_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="spoon_10_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="spoon_10_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="spoon_10_000007" />
+        </body>
+        <body name="wine_glass_11_visual" pos="0.171836 -0.268029 0" quat="0.650774 0 0 0.759271">
+            <inertial pos="3.06586e-05 3.51894e-05 0.103563" quat="0.39299 0.000311064 0.000378195 0.919542" mass="0.513567" diaginertia="0.00022433 0.000224112 4.84983e-07" />
+            <joint name="joint_world_wine_glass_11" type="free" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="wine_glass_11_000000" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="wine_glass_11_000001" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="wine_glass_11_000002" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="wine_glass_11_000003" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="wine_glass_11_000004" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="wine_glass_11_000005" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="wine_glass_11_000006" />
+            <geom type="mesh" rgba="0.4 0.4 0.4 1" mesh="wine_glass_11_000007" />
+        </body>
+    </worldbody>
+</mujoco>

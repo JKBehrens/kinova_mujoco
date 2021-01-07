@@ -40,7 +40,11 @@ def update(event):
         marker.ns = name
         marker.id = 0
         marker.type = Marker.MESH_RESOURCE
-        marker.mesh_resource = robot.link_map[name].visual.geometry.filename
+        # if we don't know the mesh name, we just skip it. Thus, anything not in the URDF will not be displayed in RVIZ
+        try:
+            marker.mesh_resource = robot.link_map[name].visual.geometry.filename
+        except KeyError:
+            continue
         marker.action = Marker.ADD
         marker.pose = pose.pose
         marker.scale.x = MODEL_SCALE
