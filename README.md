@@ -68,7 +68,7 @@ Note: for now, the sponge can't be displayed in RVIZ. Maybe, we solve that later
 
 
 ## Acknowledgements
-This work was supported by the project Interactive Perception-Action-Learning for Modelling Objects (IPALM, https://sites.google.com/view/ipalm) (H2020 -  FET - ERA-NET Cofund - CHIST-ERA III / Technology Agency of the Czech Republic, EPSILON, no. TH05020001) and by the European Regional Development Fund under project Robotics for Industry 4.0 (reg. no. $CZ.02.1.01/0.0/0.0/15\_003/0000470$).
+This work was supported by the project Interactive Perception-Action-Learning for Modelling Objects (IPALM, https://sites.google.com/view/ipalm) (H2020 -  FET - ERA-NET Cofund - CHIST-ERA III / Technology Agency of the Czech Republic, EPSILON, no. TH05020001) and by the European Regional Development Fund under project [Robotics for Industry 4.0](http://r4i.ciirc.cvut.cz/) (reg. no. $CZ.02.1.01/0.0/0.0/15\_003/0000470$).
 
 <p align="middle">
  <img src="figs/tacr.png" width=10%>
