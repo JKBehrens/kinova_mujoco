@@ -3,7 +3,7 @@
 
 ![Image of Yaktocat](scripts/simstate.png)
 
-Start simulation by 
+Start simulation by
 
 ```shell script
 roslaunch kinova_mujoco table_simulation_generated.launch
@@ -12,17 +12,17 @@ roslaunch kinova_mujoco table_simulation_generated.launch
 ## Scene preparation for MuJoCo
 
 MuJoCo requires the whole scene to be described by a single model.
-We generate URDFs from the robot workspace plus objects. To 
+We generate URDFs from the robot workspace plus objects. To
 make the simulation more stable, we decompose the object meshes
-into mant small convex bodies. 
+into mant small convex bodies.
 
 A sample scene description is given in `data_processing/full_table_scene`
-(A [SHOP VRB scene](https://michaal94.github.io/SHOP-VRB/)). 
+(A [SHOP VRB scene](https://michaal94.github.io/SHOP-VRB/)).
 The scenes can be loaded from compatible json files using `prepare_scene.py`
-or created in python code. 
+or created in python code.
 
-MuJoCo requires that all meshes for the simulation are placed in a single 
-folder. Therefore, we copy all meshes referenced in our URDF to the folder 
+MuJoCo requires that all meshes for the simulation are placed in a single
+folder. Therefore, we copy all meshes referenced in our URDF to the folder
 [meshes](meshes) using the script `scripts/collect_meshes.py`.
 
 ## Simulating soft objects
@@ -38,7 +38,7 @@ the mujoco xml format. They are defined as follows:
     </composite>
 </body>
 ```
-Make sure to give a name to the body tag (here: sponge), because otherwise there will be an exception 
+Make sure to give a name to the body tag (here: sponge), because otherwise there will be an exception
 with reading the mujoco world state:
 ```shell script
 [ERROR] [1610016288.815110785]: Exception thrown while processing service call: basic_string::_M_construct null not valid
@@ -68,8 +68,9 @@ Note: for now, the sponge can't be displayed in RVIZ. Maybe, we solve that later
 
 
 ## Acknowledgements
-This work was supported by the project Interactive Perception-Action-Learning for Modelling Objects (IPALM, https://sites.google.com/view/ipalm) (H2020 -  FET - ERA-NET Cofund - CHIST-ERA III / Technology Agency of the Czech Republic, EPSILON, no. TH05020001).  
+This work was supported by the project Interactive Perception-Action-Learning for Modelling Objects (IPALM, https://sites.google.com/view/ipalm) (H2020 -  FET - ERA-NET Cofund - CHIST-ERA III / Technology Agency of the Czech Republic, EPSILON, no. TH05020001) and by the European Regional Development Fund under project Robotics for Industry 4.0 (reg. no. $CZ.02.1.01/0.0/0.0/15\_003/0000470$).
 
 <p align="middle">
  <img src="figs/tacr.png" width=10%>
+ <img src="figs/r4i.png" width=10%>
 </p>  
