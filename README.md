@@ -65,3 +65,11 @@ There is a working example. Run:
 roslaunch kinova_mujoco table_simulation_generated_mjxml.launch
 ```
 Note: for now, the sponge can't be displayed in RVIZ. Maybe, we solve that later.
+
+
+## Acknowledgements
+This work was supported by the project Interactive Perception-Action-Learning for Modelling Objects (IPALM, https://sites.google.com/view/ipalm) (H2020 -  FET - ERA-NET Cofund - CHIST-ERA III / Technology Agency of the Czech Republic, EPSILON, no. TH05020001).  
+
+<p align="middle">
+ <img src="figs/tacr.png" width=10%>
+</p>  
